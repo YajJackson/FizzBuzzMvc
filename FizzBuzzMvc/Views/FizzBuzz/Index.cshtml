@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@functions {
+    private string ToFizzBuzz(int value)
+    {
+        return value % 15 == 0 ? "FizzBuzz" : value % 5 == 0 ? "Buzz" : value % 3 == 0 ? "Fizz" : $"{value}";
+    }
+}
+
+<h2>Dot Product Place</h2>
+
+<ul>
+@foreach (var number in Enumerable.Range(1, 100).Select(ToFizzBuzz))
+{
+    <li>@number</li>
+}
+
+</ul>
